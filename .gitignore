@@ -10,4 +10,3 @@ pretrained_models
 ./*.mp4
 demo/tmp
 demo/outputs
-.venv
