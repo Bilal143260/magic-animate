@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from fastapi import FastAPI
-from inference import read_video, read_image, generate_vid
+from api.inference import read_video, read_image, generate_vid
 
 pose_mapper = {
     "dancing_1": "/home/bilal/magic-animate/inputs/applications/driving/densepose/demo4.mp4",
@@ -23,7 +23,7 @@ class AnimateImageRequest(BaseModel):
 app = FastAPI()
 
 
-@app.post("/animate/")
+@app.post("/video_gen_dance_byte/")
 async def animate_image(request: AnimateImageRequest):
     """
     Takes an image path and optional text as input
