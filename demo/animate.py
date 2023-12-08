@@ -171,25 +171,36 @@ class MagicAnimate():
                 source_image             = source_image,
             ).videos
 
-            source_images = np.array([source_image] * original_length)
-            source_images = rearrange(torch.from_numpy(source_images), "t h w c -> 1 c t h w") / 255.0
-            samples_per_video.append(source_images)
+            # source_images = np.array([source_image] * original_length)
+            # source_images = rearrange(torch.from_numpy(source_images), "t h w c -> 1 c t h w") / 255.0
+            # samples_per_video.append(source_images)
             
-            control = control / 255.0
-            control = rearrange(control, "t h w c -> 1 c t h w")
-            control = torch.from_numpy(control)
-            samples_per_video.append(control[:, :, :original_length])
+            # control = control / 255.0
+            # control = rearrange(control, "t h w c -> 1 c t h w")
+            # control = torch.from_numpy(control)
+            # samples_per_video.append(control[:, :, :original_length])
 
-            samples_per_video.append(sample[:, :, :original_length])
+            # samples_per_video.append(sample[:, :, :original_length])
 
-            samples_per_video = torch.cat(samples_per_video)
+            # samples_per_video = torch.cat(samples_per_video)
 
+            # time_str = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+            # savedir = f"demo/outputs"
+            # animation_path = f"{savedir}/{time_str}.mp4"
+
+            # os.makedirs(savedir, exist_ok=True)
+            # save_videos_grid(samples_per_video, animation_path)
+
+            # Save only the generated animation
+            original_length = control.shape[0]
+            animation_sample = sample[:, :, :original_length]
+
+            # Save the video
             time_str = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
             savedir = f"demo/outputs"
             animation_path = f"{savedir}/{time_str}.mp4"
 
             os.makedirs(savedir, exist_ok=True)
-            save_videos_grid(samples_per_video, animation_path)
+            save_videos_grid(animation_sample, animation_path)
             
             return animation_path
-            
