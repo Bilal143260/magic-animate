@@ -31,10 +31,10 @@ def generate_vid(reference_image, motion_sequence, seed, steps, guidance_scale):
 
 # Set your values here
 reference_image_path = (
-    "/home/bilal/magic-animate/inputs/applications/source_image/multi1_source.png"
+    "/home/bilal/magic-animate/inputs/applications/source_image/demo4.png"
 )
 motion_sequence_path = (
-    "/home/bilal/magic-animate/inputs/applications/driving/densepose/multi_dancing.mp4"
+    "/home/bilal/magic-animate/inputs/applications/driving/densepose/boxing.mp4"
 )
 seed = 1
 steps = 25

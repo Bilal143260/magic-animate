@@ -8,6 +8,9 @@ pose_mapper = {
     "jogging": "/home/bilal/magic-animate/inputs/applications/driving/densepose/running2.mp4",
     "running": "/home/bilal/magic-animate/inputs/applications/driving/densepose/running.mp4",
     "multi-dancing": "/home/bilal/magic-animate/inputs/applications/driving/densepose/multi_dancing.mp4",
+    "boxing": "/home/bilal/magic-animate/inputs/applications/driving/densepose/boxing.mp4",
+    "dancing_3": "/home/bilal/magic-animate/inputs/applications/driving/densepose/tiktok_dance.mp4",
+    "punching": "/home/bilal/magic-animate/inputs/applications/driving/densepose/punching.mp4"
 }
 
 seed = 1
